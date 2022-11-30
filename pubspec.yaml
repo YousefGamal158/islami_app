@@ -38,8 +38,14 @@ dependencies:
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
+  flutter_native_splash: ^2.2.16
   flutter_test:
     sdk: flutter
+flutter_native_splash:
+  color: "#42a5f5"
+  image: assets/images/Group 9@3x.png
+  android_gravity: fill
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

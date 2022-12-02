@@ -14,6 +14,15 @@ class MyTheme {
             fontSize: 30,
             fontWeight: FontWeight.w500,
             fontFamily: "Elmessiri")),
+    textTheme: TextTheme(
+      headline3: TextStyle(
+        fontFamily: 'ElMessiri',
+        fontSize: 22,
+        color: Colors.white,
+      ),
+      headline2:
+          TextStyle(fontFamily: 'ElMessiri', fontSize: 22, color: Colors.black),
+    ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
         showSelectedLabels: true,
         showUnselectedLabels: false,

@@ -19,7 +19,7 @@ class SuraTitleWidget extends StatelessWidget {
         alignment: Alignment.center,
         child: Text(
           title,
-          style: TextStyle(fontSize: 24, fontFamily: 'ElMessiri'),
+          style: Theme.of(context).textTheme.headline2,
         ),
       ),
     );

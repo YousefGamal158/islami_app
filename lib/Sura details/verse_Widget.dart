@@ -16,7 +16,7 @@ class VerseWidget extends StatelessWidget {
         "$content[$index]",
         textDirection: TextDirection.rtl,
         textAlign: TextAlign.center,
-        style: TextStyle(fontSize: 18, fontFamily: 'Quran1'),
+        style: Theme.of(context).textTheme.headline1,
       ),
     );
   }

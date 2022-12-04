@@ -18,7 +18,7 @@ class HadethTitleWidget extends StatelessWidget {
         alignment: Alignment.center,
         child: Text(
           hadeth.title,
-          style: TextStyle(fontSize: 24, fontFamily: 'ElMessiri'),
+          style: Theme.of(context).textTheme.headline2,
         ),
       ),
     );

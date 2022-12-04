@@ -79,7 +79,7 @@ class _SebhaTabState extends State<SebhaTab> {
             height: 50,
             alignment: Alignment.center,
             decoration: BoxDecoration(
-                color: Theme.of(context).primaryColor,
+                color: Theme.of(context).accentColor,
                 borderRadius: BorderRadius.circular(25)),
             child: Text(
               azkar[currentindex],

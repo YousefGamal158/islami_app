@@ -10,7 +10,7 @@ class HadethDetails extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
-            image: AssetImage('assets/images/main_background.png'),
+            image: AssetImage('assets/images/main_background_dark.png'),
             fit: BoxFit.fill),
       ),
       child: Scaffold(
@@ -31,10 +31,7 @@ class HadethDetails extends StatelessWidget {
                 child: Text(
                   args.content,
                   textDirection: TextDirection.rtl,
-                  style: TextStyle(
-                    fontFamily: 'Quran1',
-                    fontSize: 19,
-                  ),
+                  style: Theme.of(context).textTheme.headline1,
                 ),
               ),
             ),

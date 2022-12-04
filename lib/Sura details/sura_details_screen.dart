@@ -22,7 +22,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
-            image: AssetImage('assets/images/main_background.png'),
+            image: AssetImage('assets/images/main_background_dark.png'),
             fit: BoxFit.fill),
       ),
       child: Scaffold(
@@ -45,7 +45,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                   itemCount: verses.length,
                   separatorBuilder: (_, __) {
                     return Container(
-                      color: Theme.of(context).primaryColor,
+                      color: Theme.of(context).accentColor,
                       width: double.infinity,
                       height: 1,
                       margin: EdgeInsets.symmetric(horizontal: 64),

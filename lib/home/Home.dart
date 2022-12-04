@@ -4,6 +4,8 @@ import 'package:islami_app/home/quran/quran_tab.dart';
 import 'package:islami_app/home/radio/radio_tab.dart';
 import 'package:islami_app/home/sebha/sebha_tab.dart';
 
+import 'Settings/settings_tab.dart';
+
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'home';
 
@@ -19,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/images/main_background.png'),
+              image: AssetImage('assets/images/main_background_dark.png'),
               fit: BoxFit.fill),
         ),
         child: Scaffold(
@@ -55,10 +57,20 @@ class _HomeScreenState extends State<HomeScreen> {
                     backgroundColor: Theme.of(context).primaryColor,
                     icon: ImageIcon(AssetImage('assets/images/radio.png')),
                     label: 'إذاعه القرآن'),
+                BottomNavigationBarItem(
+                    backgroundColor: Theme.of(context).primaryColor,
+                    icon: Icon(Icons.settings),
+                    label: 'الأعدادات'),
               ]),
           body: tabs[selectedIndex],
         ));
   }
 
-  List<Widget> tabs = [QuranTab(), SebhaTab(), HadethTab(), RadioTab()];
+  List<Widget> tabs = [
+    QuranTab(),
+    SebhaTab(),
+    HadethTab(),
+    RadioTab(),
+    SettingsTab()
+  ];
 }

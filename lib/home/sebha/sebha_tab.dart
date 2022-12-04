@@ -83,10 +83,8 @@ class _SebhaTabState extends State<SebhaTab> {
                 borderRadius: BorderRadius.circular(25)),
             child: Text(
               azkar[currentindex],
-              style: Theme.of(context)
-                  .textTheme
-                  .headline2!
-                  .copyWith(color: Colors.white),
+              style: TextStyle(
+                  fontFamily: 'Quran1', fontSize: 30, color: Colors.white),
             ),
           ),
         ],

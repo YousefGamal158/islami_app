@@ -90,6 +90,22 @@ flutter:
         - asset: assets/fonts/ElMessiri-SemiBold.ttf
 
           style: italic
+    - family: Quran1
+      fonts:
+        - asset: assets/fonts/Quran.ttf
+          style: normal
+    - family: Quran2
+      fonts:
+        - asset: assets/fonts/Quran2.ttf
+          style: normal
+    - family: Quran3
+      fonts:
+        - asset: assets/fonts/Quran3.ttf
+          style: normal
+    - family: Quran4
+      fonts:
+        - asset: assets/fonts/Quran4.ttf
+          style: normal
   #     - family: Trajan Pro
   #       fonts:
   #         - asset: fonts/TrajanPro.ttf

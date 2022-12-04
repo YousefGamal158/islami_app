@@ -13,10 +13,10 @@ class VerseWidget extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
       alignment: Alignment.center,
       child: Text(
-        '$content [$index]',
+        "$content[$index]",
         textDirection: TextDirection.rtl,
         textAlign: TextAlign.center,
-        style: TextStyle(fontSize: 18, fontFamily: 'ElMessiri'),
+        style: TextStyle(fontSize: 18, fontFamily: 'Quran1'),
       ),
     );
   }

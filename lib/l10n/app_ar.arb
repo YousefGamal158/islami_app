@@ -1,0 +1,15 @@
+{
+"islami" : "إسلامي",
+"suraName" : "أسم السورة",
+"quran" : "القرآن الكريم",
+"tasbeh" : "تسبيح",
+"numberOfPraises" : "عدد التسبيحات",
+"hadeth" : "الأحاديث",
+"radio" : "إذاعه القرآن",
+"settings" : "الاعدادات",
+"theme" : "الوضع",
+"language" : "اللغه",
+"light" : "فاتح",
+"dark" : "داكن",
+"english": "العربية"
+}

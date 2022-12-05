@@ -32,7 +32,7 @@ class MyTheme {
         color: Colors.black,
       ),
       headline2:
-          TextStyle(fontFamily: 'ElMessiri', fontSize: 22, color: Colors.black),
+          TextStyle(fontFamily: 'ElMessiri', fontSize: 24, color: Colors.black),
       headline1:
           TextStyle(fontFamily: 'Quran1', fontSize: 19, color: Colors.black),
       headline4:

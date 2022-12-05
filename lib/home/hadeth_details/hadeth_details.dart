@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/home/hadeth/hadeth.dart';
+import 'package:provider/provider.dart';
+
+import '../../providers/settings_provider.dart';
 
 class HadethDetails extends StatelessWidget {
   static const String routeName = 'HadethDetails';
 
   @override
   Widget build(BuildContext context) {
+    var settingsProvider = Provider.of<SettingsProvider>(context);
     var args = ModalRoute.of(context)?.settings.arguments as Hadeth;
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage('assets/images/main_background_dark.png'),
+            image: AssetImage(settingsProvider.getMainBackgroundImage()),
             fit: BoxFit.fill),
       ),
       child: Scaffold(
@@ -24,7 +28,7 @@ class HadethDetails extends StatelessWidget {
             margin: EdgeInsets.symmetric(horizontal: 24, vertical: 64),
             elevation: 12,
             shape:
-                BeveledRectangleBorder(borderRadius: BorderRadius.circular(3)),
+            BeveledRectangleBorder(borderRadius: BorderRadius.circular(3)),
             child: SingleChildScrollView(
               child: Padding(
                 padding: const EdgeInsets.all(8.0),

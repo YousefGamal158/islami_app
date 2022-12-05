@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
+
+import '../../providers/settings_provider.dart';
 
 class SebhaTab extends StatefulWidget {
   @override
@@ -13,6 +17,7 @@ class _SebhaTabState extends State<SebhaTab> {
 
   @override
   Widget build(BuildContext context) {
+    var settingsProvider = Provider.of<SettingsProvider>(context);
     var mediaQuery = MediaQuery.of(context).size;
     return Container(
       width: double.infinity,
@@ -27,7 +32,7 @@ class _SebhaTabState extends State<SebhaTab> {
               children: [
                 Positioned(
                   child: Image.asset(
-                    'assets/images/heads.png',
+                    settingsProvider.getSebhaHeadImage(),
                     height: mediaQuery.height * 0.1,
                   ),
                   left: mediaQuery.width * 0.45,
@@ -41,7 +46,7 @@ class _SebhaTabState extends State<SebhaTab> {
                     },
                     child: Transform.rotate(
                       angle: angle,
-                      child: Image.asset('assets/images/bodys.png',
+                      child: Image.asset(settingsProvider.getSebhaBodyImage(),
                           height: mediaQuery.height * 0.28),
                     ),
                   ),
@@ -50,7 +55,7 @@ class _SebhaTabState extends State<SebhaTab> {
             ),
           ),
           Text(
-            'عدد التسبيحات',
+            AppLocalizations.of(context)!.numberOfPraises,
             style: Theme.of(context).textTheme.headline2,
           ),
           const SizedBox(

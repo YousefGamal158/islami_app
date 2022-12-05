@@ -31,6 +31,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  provider: ^6.0.4
+  # Add this line
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -41,10 +43,19 @@ dev_dependencies:
   flutter_native_splash: ^2.2.16
   flutter_test:
     sdk: flutter
+  flutter_localizations: # Add this line
+    sdk: flutter
+  intl: ^0.17.0  # Add this line
 flutter_native_splash:
   color: "#42a5f5"
-  image: assets/images/Group 9@3x.png
+  image: 'assets/images/Group 9@3x.png'
+  color_dark: '#3A3A3A'
+  image_dark: 'asset/images/splash_dark.png'
+  android: true
+  ios: true
   android_gravity: fill
+
+
 
 
   # The "flutter_lints" package below contains a set of recommended lints to
@@ -59,6 +70,7 @@ flutter_native_splash:
 
 # The following section is specific to Flutter packages.
 flutter:
+  generate: true
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

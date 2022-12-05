@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami_app/Sura%20details/sura_details_args.dart';
 import 'package:islami_app/Sura%20details/verse_Widget.dart';
+import 'package:provider/provider.dart';
+
+import '../providers/settings_provider.dart';
 
 class SuraDetailsScreen extends StatefulWidget {
   static const String routeName = 'SuraDetailsScreen';
@@ -15,14 +18,15 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var settingsProvider = Provider.of<SettingsProvider>(context);
     SuraDetailsArgs args =
         (ModalRoute.of(context)?.settings.arguments) as SuraDetailsArgs;
     if (verses.isEmpty) readFile(args.index + 1);
 
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage('assets/images/main_background_dark.png'),
+            image: AssetImage(settingsProvider.getMainBackgroundImage()),
             fit: BoxFit.fill),
       ),
       child: Scaffold(
@@ -31,28 +35,28 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
         ),
         body: verses.isEmpty
             ? Center(
-                child: CircularProgressIndicator(),
-              )
+          child: CircularProgressIndicator(),
+        )
             : Card(
-                margin: EdgeInsets.symmetric(horizontal: 24, vertical: 64),
-                elevation: 12,
-                shape: BeveledRectangleBorder(
-                    borderRadius: BorderRadius.circular(3)),
-                child: ListView.separated(
-                  itemBuilder: (_, index) {
-                    return VerseWidget(verses[index], index + 1);
-                  },
-                  itemCount: verses.length,
-                  separatorBuilder: (_, __) {
-                    return Container(
-                      color: Theme.of(context).accentColor,
-                      width: double.infinity,
-                      height: 1,
-                      margin: EdgeInsets.symmetric(horizontal: 64),
-                    );
-                  },
-                ),
-              ),
+          margin: EdgeInsets.symmetric(horizontal: 24, vertical: 64),
+          elevation: 12,
+          shape: BeveledRectangleBorder(
+              borderRadius: BorderRadius.circular(3)),
+          child: ListView.separated(
+            itemBuilder: (_, index) {
+              return VerseWidget(verses[index], index + 1);
+            },
+            itemCount: verses.length,
+            separatorBuilder: (_, __) {
+              return Container(
+                color: Theme.of(context).accentColor,
+                width: double.infinity,
+                height: 1,
+                margin: EdgeInsets.symmetric(horizontal: 64),
+              );
+            },
+          ),
+        ),
       ),
     );
   }

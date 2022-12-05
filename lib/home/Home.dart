@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/home/hadeth/hadeth_tab.dart';
 import 'package:islami_app/home/quran/quran_tab.dart';
 import 'package:islami_app/home/radio/radio_tab.dart';
 import 'package:islami_app/home/sebha/sebha_tab.dart';
+import 'package:islami_app/providers/settings_provider.dart';
+import 'package:provider/provider.dart';
 
 import 'Settings/settings_tab.dart';
 
@@ -18,17 +21,18 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var settingsProvider = Provider.of<SettingsProvider>(context);
     return Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/images/main_background_dark.png'),
+              image: AssetImage(settingsProvider.getMainBackgroundImage()),
               fit: BoxFit.fill),
         ),
         child: Scaffold(
           backgroundColor: Colors.transparent,
           appBar: AppBar(
             title: Text(
-              'إسلامي',
+              AppLocalizations.of(context)!.islami,
             ),
           ),
           bottomNavigationBar: BottomNavigationBar(
@@ -43,24 +47,24 @@ class _HomeScreenState extends State<HomeScreen> {
                 BottomNavigationBarItem(
                   backgroundColor: Theme.of(context).primaryColor,
                   icon: ImageIcon(AssetImage('assets/images/quran.png')),
-                  label: 'القرآن الكريم',
+                  label: AppLocalizations.of(context)!.quran,
                 ),
                 BottomNavigationBarItem(
                     backgroundColor: Theme.of(context).primaryColor,
                     icon: ImageIcon(AssetImage('assets/images/sebha_blue.png')),
-                    label: 'تسبيح'),
+                    label: AppLocalizations.of(context)!.tasbeh),
                 BottomNavigationBarItem(
                     backgroundColor: Theme.of(context).primaryColor,
                     icon: ImageIcon(AssetImage('assets/images/hadeth.png')),
-                    label: 'أحاديث '),
+                    label: AppLocalizations.of(context)!.hadeth),
                 BottomNavigationBarItem(
                     backgroundColor: Theme.of(context).primaryColor,
                     icon: ImageIcon(AssetImage('assets/images/radio.png')),
-                    label: 'إذاعه القرآن'),
+                    label: AppLocalizations.of(context)!.radio),
                 BottomNavigationBarItem(
                     backgroundColor: Theme.of(context).primaryColor,
                     icon: Icon(Icons.settings),
-                    label: 'الأعدادات'),
+                    label: AppLocalizations.of(context)!.settings),
               ]),
           body: tabs[selectedIndex],
         ));

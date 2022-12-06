@@ -50,7 +50,7 @@ flutter_native_splash:
   color: "#42a5f5"
   image: 'assets/images/Group 9@3x.png'
   color_dark: '#3A3A3A'
-  image_dark: 'asset/images/splash_dark.png'
+  image_dark: 'assets/images/splash_dark.png'
   android: true
   ios: true
   android_gravity: fill

@@ -13,14 +13,17 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  late SettingsProvider provider;
+
   @override
   Widget build(BuildContext context) {
+    provider = Provider.of(context);
     var settingsProvider = Provider.of<SettingsProvider>(context);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: MyTheme.lightTheme,
       darkTheme: MyTheme.darkTheme,
-      themeMode: settingsProvider.currentTheme,
+      themeMode: provider.currentTheme,
       routes: {
         HomeScreen.routeName: (_) => HomeScreen(),
         SuraDetailsScreen.routeName: (_) => SuraDetailsScreen(),

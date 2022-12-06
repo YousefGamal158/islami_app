@@ -11,5 +11,6 @@
 "language" : "Language",
 "light": "Light",
 "dark": "Dark",
-"english" : "English"
+"english" : "English",
+"arabic" : "Arabic"
 }
